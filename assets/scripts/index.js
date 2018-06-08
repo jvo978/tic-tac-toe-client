@@ -2,10 +2,12 @@
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
-
+const events = require('./events')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
 $(() => {
-  // your JS code goes here
+  $('#sign-up-form').on('submit', events.onSignUp)
+  $('#sign-in-form').on('submit'), events.onSignIn)
+  // console.log('This is what happens when I pressed submit')
 })
