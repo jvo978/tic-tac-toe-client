@@ -10,12 +10,59 @@ const onSignUp = function (event) {
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
+
+  document.getElementById('sign-up-form').reset()
 }
 
-const onSignIn = function () {
+const onSignIn = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
 
+  api.signIn(data)
+    .then(ui.signInSuccess)
+    .catch(ui.signInFailure)
+
+  document.getElementById('sign-in-form').reset()
+}
+
+const onChangePassword = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+
+  api.changePassword(data)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure)
+
+  document.getElementById('change-password-form').reset() // clear form text after event
+}
+
+const onSignOut = function (event) {
+  event.preventDefault()
+
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
+const onCreateGame = function (event) {
+  event.preventDefault()
+
+  api.createGame()
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameFailure)
+}
+const onUpdateGame = function (event) {
+  event.preventDefault()
+
+  api.updateGame(event)
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure)
 }
 module.exports = {
   onSignUp: onSignUp,
-  onSignIn: onSignIn
+  onSignIn: onSignIn,
+  onChangePassword: onChangePassword,
+  onSignOut: onSignOut,
+  onCreateGame: onCreateGame,
+  onUpdateGame: onUpdateGame
 }
