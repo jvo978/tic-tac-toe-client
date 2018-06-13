@@ -13,12 +13,13 @@ const signInSuccess = function (response) {
   $('#sign-out').show()
   $('#signUp-signIn').hide()
   $('#changePassword').show()
-  $('#messageStatus').html('Signed in!')
+  $('#messageStatus').html('You are now signed in!')
   $('#new-game').show()
+  $('#second-message').html('Click New Game to play')
 }
 
 const signInFailure = function (response) {
-  $('#messageStatus').html('Incorrect login, try again!')
+  $('#messageStatus').html('Sign in error, try again!')
 }
 
 const changePasswordSuccess = function (response) {
@@ -32,7 +33,7 @@ const changePasswordFailure = function (response) {
 const signOutSuccess = function (response) {
   delete store.user
   $('#sign-out').hide()
-  $('#messageStatus').html('Logged off')
+  $('#messageStatus').html('You are now signed off')
   $('#signUp-signIn').show()
   $('#changePassword').hide()
 }
@@ -42,21 +43,36 @@ const signOutFailure = function (response) {
 }
 
 const createGameSuccess = function (response) {
-  store.gameid = response.game.id // store game id in order to update game
-  $('#messageStatus').html('New game started')
+  store.game = response.game // store game object in order to update game
+  $('#messageStatus').html('New game -- Player X turn')
   $('.grid-item').html('')
-  // console.log(response.game.id)
+  $('.grid-container').show()
+  $('#second-message').html('')
+  $('#game-info').show()
 }
+// console.log(response.game.id)
 
 const createGameFailure = function (response) {
-  $('#new-game-message').html('You have to sign in first')
+  $('#messageStatus').html('Unable to create new game, try again')
 }
 const updateGameSuccess = function (response) {
-  store.game = response.game.cells
+  // store.game = response.game.cells
 }
-
 const updateGameFailure = function (response) {
-  console.log(response)
+  $('#messageStatus').html('Unable to update game')
+}
+const showGameSuccess = function (response) {
+  $('#second-message').html('')
+  const displayMessage = (`<p>Game ID: ${response.game.id}</p>
+                           <p>Player O: ${response.game.player_o}</p>
+                           <p>Player X ID: ${response.game.player_x.id}</p>
+                           <p>Player X Email: ${response.game.player_x.email}</p>`)
+
+  $('#second-message').append(displayMessage)
+//  const displayMessage = (`<p>yea...</p>`)
+}
+const showGameFailure = function (response) {
+  $('#messageStatus').html('Unable to view game info')
 }
 
 module.exports = {
@@ -71,5 +87,8 @@ module.exports = {
   createGameSuccess: createGameSuccess,
   createGameFailure: createGameFailure,
   updateGameSuccess: updateGameSuccess,
-  updateGameFailure: updateGameFailure
+  updateGameFailure: updateGameFailure,
+  showGameFailure: showGameFailure,
+  showGameSuccess: showGameSuccess
+
 }

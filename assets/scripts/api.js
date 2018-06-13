@@ -36,7 +36,16 @@ const signOut = function () {
     }
   })
 }
-
+const showGame = function (data) {
+  return $.ajax({
+    method: 'GET',
+    url: 'https://aqueous-atoll-85096.herokuapp.com/games/' + store.game.id,
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 const createGame = function () {
   return $.ajax({
     method: 'POST',
@@ -47,10 +56,10 @@ const createGame = function () {
   })
 }
 
-const updateGame = function (event, over) {
+const updateGame = function (data) {
   return $.ajax({
     method: 'PATCH',
-    url: 'https://aqueous-atoll-85096.herokuapp.com/games/' + store.gameid,
+    url: 'https://aqueous-atoll-85096.herokuapp.com/games/' + store.game.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -60,7 +69,7 @@ const updateGame = function (event, over) {
           index: event.target.id,
           value: event.target.innerHTML
         },
-        over: event.target.over
+        over: store.game.over
       }
     //  console.log(data)
     //  console.log(data.game.cells)
@@ -74,5 +83,6 @@ module.exports = {
   changePassword: changePassword,
   signOut: signOut,
   createGame: createGame,
-  updateGame: updateGame
+  updateGame: updateGame,
+  showGame: showGame
 }

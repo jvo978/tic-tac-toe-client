@@ -36,6 +36,15 @@ const onChangePassword = function (event) {
   document.getElementById('change-password-form').reset() // clear form text after event
 }
 
+const onShowGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+
+  api.showGame(data)
+    .then(ui.showGameSuccess)
+    .catch(ui.showGameFailure)
+}
+
 const onSignOut = function (event) {
   event.preventDefault()
 
@@ -64,5 +73,6 @@ module.exports = {
   onChangePassword: onChangePassword,
   onSignOut: onSignOut,
   onCreateGame: onCreateGame,
-  onUpdateGame: onUpdateGame
+  onUpdateGame: onUpdateGame,
+  onShowGame: onShowGame
 }
