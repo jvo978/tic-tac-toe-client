@@ -24,6 +24,7 @@ const signInFailure = function (response) {
 
 const changePasswordSuccess = function (response) {
   $('#messageStatus').html('Change Password successful')
+  $('#second-message').html('')
 }
 
 const changePasswordFailure = function (response) {
@@ -36,6 +37,10 @@ const signOutSuccess = function (response) {
   $('#messageStatus').html('You are now signed off')
   $('#signUp-signIn').show()
   $('#changePassword').hide()
+  $('#new-game').hide()
+  $('.grid-container').hide()
+  $('#game-info').hide()
+  $('#game-id').html('')
 }
 
 const signOutFailure = function (response) {
