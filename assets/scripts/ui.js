@@ -41,6 +41,7 @@ const signOutSuccess = function (response) {
   $('.grid-container').hide()
   $('#game-info').hide()
   $('#game-id').html('')
+  $('#second-message').html('')
 }
 
 const signOutFailure = function (response) {
