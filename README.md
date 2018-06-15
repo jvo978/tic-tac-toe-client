@@ -8,4 +8,7 @@ As A USER, I want to change my password, because I want a more secured password.
 
 As A USER, I want to see the game info, to see amount of wins
 
+As A USER, I want user feed back on every event so user is aware of status.
+
+
 https://imgur.com/a/rgKPBlW
