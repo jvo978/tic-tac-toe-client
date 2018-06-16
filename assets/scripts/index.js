@@ -31,6 +31,7 @@ $(() => {
 // let o = playerO
 let turn = 0
 let currentPlayer = 'X'
+
 const resetBoard = function () {
   currentPlayer = 'X'
   turn = 0
@@ -40,7 +41,7 @@ const playerMove = function (event) {
   // console.log('event is', event.target.id)
   // board[event.target.id] = 'X'
   // console.log(board)
-  if (event.target.innerHTML === '' && store.game.over === false) {
+  if (event.target.innerHTML === '' && store.game.over === false && $('.grid-item').val('')) {
     if (currentPlayer === 'X') {
       store.game.cells[event.target.id] = 'X' // store.game.cells is my array
       event.target.innerHTML = 'X' // target clicked
@@ -63,6 +64,7 @@ const playerMove = function (event) {
     // checkWin(event)
     events.onUpdateGame(event)
   }
+  console.log(turn)
 }
 const playerXwins = function (event) {
   $('#messageStatus').html('Player X Wins!!')
@@ -74,86 +76,103 @@ const checkWin = function (event) {
   if (store.game.cells[0] === 'X' && store.game.cells[1] === 'X' && store.game.cells[2] === 'X') {
     playerXwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[0] === 'O' && store.game.cells[1] === 'O' && store.game.cells[2] === 'O') {
     playerOwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[3] === 'X' && store.game.cells[4] === 'X' && store.game.cells[5] === 'X') {
     playerXwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[3] === 'O' && store.game.cells[4] === 'O' && store.game.cells[5] === 'O') {
     playerOwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[6] === 'X' && store.game.cells[7] === 'X' && store.game.cells[8] === 'X') {
     playerXwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[6] === 'O' && store.game.cells[7] === 'O' && store.game.cells[8] === 'O') {
     playerOwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[0] === 'X' && store.game.cells[3] === 'X' && store.game.cells[6] === 'X') {
     playerXwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[0] === 'O' && store.game.cells[3] === 'O' && store.game.cells[6] === 'O') {
     playerOwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[1] === 'X' && store.game.cells[4] === 'X' && store.game.cells[7] === 'X') {
     playerXwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[1] === 'O' && store.game.cells[4] === 'O' && store.game.cells[7] === 'O') {
     playerOwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[2] === 'X' && store.game.cells[5] === 'X' && store.game.cells[8] === 'X') {
     playerXwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[2] === 'O' && store.game.cells[5] === 'O' && store.game.cells[8] === 'O') {
     playerOwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[0] === 'X' && store.game.cells[4] === 'X' && store.game.cells[8] === 'X') {
     playerXwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[0] === 'O' && store.game.cells[4] === 'O' && store.game.cells[8] === 'O') {
     playerOwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[2] === 'X' && store.game.cells[4] === 'X' && store.game.cells[6] === 'X') {
     playerXwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (store.game.cells[2] === 'O' && store.game.cells[4] === 'O' && store.game.cells[6] === 'O') {
     playerOwins(event)
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
   if (turn === 9) {
     $('#messageStatus').html('TIE GAME!!')
     store.game.over = true
+    $('#new-game').show()
     resetBoard()
   }
 }

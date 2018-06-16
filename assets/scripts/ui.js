@@ -55,6 +55,7 @@ const createGameSuccess = function (response) {
   $('.grid-container').show()
   $('#second-message').html('')
   $('#game-info').show()
+  $('#new-game').hide()
 }
 // console.log(response.game.id)
 
