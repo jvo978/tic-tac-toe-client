@@ -12,8 +12,11 @@ $(() => {
   $('#sign-in-form').on('submit', events.onSignIn)
   $('#change-password-form').on('submit', events.onChangePassword)
   $('#sign-out').on('click', events.onSignOut)
-  $('#new-game').on('click', events.onCreateGame)
   $('#game-info').on('click', events.onShowGame)
+  $('#new-game').on('click', events.onCreateGame)
+  $('#new-game').on('click', function () {
+    resetBoard()
+  })
   $('.grid-item').on('click', function (event) {
     playerMove(event)
   })
@@ -64,7 +67,6 @@ const playerMove = function (event) {
     // checkWin(event)
     events.onUpdateGame(event)
   }
-  console.log(turn)
 }
 const playerXwins = function (event) {
   $('#messageStatus').html('Player X Wins!!')

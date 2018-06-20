@@ -55,7 +55,7 @@ const createGameSuccess = function (response) {
   $('.grid-container').show()
   $('#second-message').html('')
   $('#game-info').show()
-  $('#new-game').hide()
+  // $('#new-game').hide()
 }
 // console.log(response.game.id)
 
@@ -74,7 +74,6 @@ const showGameSuccess = function (response) {
                            <p>Player O: ${response.game.player_o}</p>
                            <p>Player X ID: ${response.game.player_x.id}</p>
                            <p>Player X Email: ${response.game.player_x.email}</p>`)
-
   $('#second-message').append(displayMessage)
 //  const displayMessage = (`<p>yea...</p>`)
 }
@@ -97,5 +96,4 @@ module.exports = {
   updateGameFailure: updateGameFailure,
   showGameFailure: showGameFailure,
   showGameSuccess: showGameSuccess
-
 }

@@ -46,6 +46,7 @@ const showGame = function (data) {
     }
   })
 }
+
 const createGame = function () {
   return $.ajax({
     method: 'POST',
