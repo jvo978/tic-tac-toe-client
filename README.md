@@ -35,10 +35,12 @@ https://imgur.com/a/rgKPBlW
 <p>After that, I went back and started focusing on the game api mainly create game, show game, and update game. Create game and show game were buttons and update game was off of user action. Like the user api, the game api also displayed success/failure messages for the user.</p>
 <p>The last thing I did was clean as much code as I could especially in my logic. I saw repeated code so I took them out and made a function and referenced it when needed. I touched up the scss and got rid of all my console log. I played the game many time to make sure it function properly so that the user will get the best experience out of the game. I kept my console open to view any error messages incase I missed something.</p>
 
-<h2>Future Iteration</h2>
+<h2>Future Iteration/ fixed problems</h2>
 <ul>
 <li>Add more features and touch up the scss on page</li>
 <li>Clean up code by making an outside function that refers to all the repeated code</li>
 <li>Try out the game=over? api in the future</li>
 <li>Abuse the issue cue to get things done more efficiently, I tend to get stuck and waste too much time trying to figure it out when I could just simply ask for assistance.</li>
+<li>My board was not resetting after a game was over therefore, player O would start occasionally. I was able to fix it by making a reset function inside my logic conditions after a player won.</li>
+<li>When a player puts an X or O into the board, the box would move a tad. Luckily this did not affect my game functionality, but I still would like to fix it..</li>
 </ul>
