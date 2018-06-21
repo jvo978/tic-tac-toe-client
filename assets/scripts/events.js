@@ -24,6 +24,7 @@ const onSignIn = function (event) {
 
   document.getElementById('sign-in-form').reset()
   document.getElementById('change-password-form').reset()
+  document.getElementById('sign-up-form').reset()
 }
 
 const onChangePassword = function (event) {
@@ -44,6 +45,7 @@ const onShowGame = function (event) {
   api.showGame(data)
     .then(ui.showGameSuccess)
     .catch(ui.showGameFailure)
+  document.getElementById('change-password-form').reset()
 }
 
 const onSignOut = function (event) {
@@ -53,6 +55,7 @@ const onSignOut = function (event) {
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
   document.getElementById('change-password-form').reset()
+  document.getElementById('sign-up-form').reset()
 }
 
 const onCreateGame = function (event) {
@@ -60,6 +63,7 @@ const onCreateGame = function (event) {
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
+  document.getElementById('change-password-form').reset()
 }
 const onUpdateGame = function (event) {
   event.preventDefault()
