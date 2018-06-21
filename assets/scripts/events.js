@@ -23,6 +23,7 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 
   document.getElementById('sign-in-form').reset()
+  document.getElementById('change-password-form').reset()
 }
 
 const onChangePassword = function (event) {
@@ -51,6 +52,7 @@ const onSignOut = function (event) {
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
+  document.getElementById('change-password-form').reset()
 }
 
 const onCreateGame = function (event) {
