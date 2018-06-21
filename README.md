@@ -36,3 +36,9 @@ https://imgur.com/a/rgKPBlW
 <p>The last thing I did was clean as much code as I could especially in my logic. I saw repeated code so I took them out and made a function and referenced it when needed. I touched up the scss and got rid of all my console log. I played the game many time to make sure it function properly so that the user will get the best experience out of the game. I kept my console open to view any error messages incase I missed something.</p>
 
 <h2>Future Iteration</h2>
+<ul>
+<li>Add more features and touch up the scss on page</li>
+<li>Clean up code by making an outside function that refers to all the repeated code</li>
+<li>Try out the game=over? api in the future</li>
+<li>Abuse the issue cue to get things done more efficiently, I tend to get stuck and waste too much time trying to figure it out when I could just simply ask for assistance.</li>
+</ul>
