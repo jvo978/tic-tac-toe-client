@@ -5,6 +5,7 @@ $light-gray: #d3d3d3;
 $black: #000;
 $white: #fff;
 $maroon: #800;
+$light-red: #f33;
 
 .grid-item {
   background-color: $light-gray;
@@ -25,7 +26,7 @@ $maroon: #800;
 }
 
 body {
-  background-color: $white;
+  background-color: $light-red;
   margin: 0 auto;
   text-align: center;
 }
