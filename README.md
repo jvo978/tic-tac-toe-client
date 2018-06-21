@@ -43,4 +43,5 @@ https://imgur.com/a/rgKPBlW
 <li>Abuse the issue cue to get things done more efficiently, I tend to get stuck and waste too much time trying to figure it out when I could just simply ask for assistance.</li>
 <li>My board was not resetting after a game was over therefore, player O would start occasionally. I was able to fix it by making a reset function inside my logic conditions after a player won.</li>
 <li>When a player puts an X or O into the board, the box would move a tad. Luckily this did not affect my game functionality, but I still would like to fix it..</li>
+<li>I probably would of been better off using bootstrap to make my board rather than make nine divs since that led me to some grid issues with X and O placement inside the box</li>
 </ul>
