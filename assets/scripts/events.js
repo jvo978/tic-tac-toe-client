@@ -12,6 +12,7 @@ const onSignUp = function (event) {
     .catch(ui.signUpFailure)
 
   document.getElementById('sign-up-form').reset()
+  document.getElementById('sign-in-form').reset()
 }
 
 const onSignIn = function (event) {
