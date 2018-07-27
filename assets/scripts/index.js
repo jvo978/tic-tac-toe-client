@@ -17,7 +17,7 @@ $(() => {
   $('#new-game').on('click', function () {
     resetBoard()
   })
-  $('.grid-item').on('click', function (event) {
+  $('.cell').on('click', function (event) {
     playerMove(event)
   })
 })
@@ -44,7 +44,7 @@ const playerMove = function (event) {
   // console.log('event is', event.target.id)
   // board[event.target.id] = 'X'
   // console.log(board)
-  if (event.target.innerHTML === '' && store.game.over === false && $('.grid-item').val('')) {
+  if (event.target.innerHTML === '' && store.game.over === false && $('.cell').val('')) {
     if (currentPlayer === 'X') {
       store.game.cells[event.target.id] = 'X' // store.game.cells is my array
       event.target.innerHTML = 'X' // target clicked

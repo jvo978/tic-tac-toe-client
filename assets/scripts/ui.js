@@ -38,7 +38,7 @@ const signOutSuccess = function (response) {
   $('#signUp-signIn').show()
   $('#changePassword').hide()
   $('#new-game').hide()
-  $('.grid-container').hide()
+  $('#table').hide()
   $('#game-info').hide()
   $('#game-id').html('')
   $('#second-message').html('')
@@ -51,8 +51,8 @@ const signOutFailure = function (response) {
 const createGameSuccess = function (response) {
   store.game = response.game // store game object in order to update game
   $('#messageStatus').html('New game -- Player X turn')
-  $('.grid-item').html('')
-  $('.grid-container').show()
+  $('.cell').html('')
+  $('#table').show()
   $('#second-message').html('')
   $('#game-info').show()
   // $('#new-game').hide()
